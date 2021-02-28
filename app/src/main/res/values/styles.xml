@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Button">
+        <item name="android:layout_marginRight">2.5dp</item>
+        <item name="android:layout_marginEnd">2.5dp</item>
+        <item name="android:layout_marginLeft">2.55dp</item>
+        <item name="android:layout_marginStart">2.5dp</item>
+
+        <item name="android:layout_width">@dimen/btn_width</item>
+        <item name="android:layout_height">@dimen/btn_hight</item>
+        <item name="android:background">@drawable/btn_digit_round_shap</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">@dimen/btn_txt_size</item>
+
+    </style>
+    
+    <style name="Button.Oprand" parent="Button">
+        <item name="android:background">@drawable/btn_opend_round_shap</item>
+    </style>
+    
+    
+    <style name="Layout">
+        <item name="android:weightSum">4</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:orientation">horizontal</item>
+
+    </style>
+
+    <style name="Layout.SubLayout" parent="Layout">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+</resources>
