@@ -10,74 +10,96 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private TextView display;
-    private Button press;
     private TextView display2;
+    private Button press1;
     private Button press2;
-    private TextView display3;
     private Button press3;
-    private TextView display4;
     private Button press4;
-    private TextView display5;
     private Button press5;
+    private Button btnPlus;
 
-
+    void initialViews() {
+        display2 = (TextView) findViewById(R.id.tvDisplay);
+        display2 = (TextView) findViewById(R.id.tvDisplay2);
+        press1 = (Button) findViewById(R.id.btn1);
+        press2 = (Button) findViewById(R.id.btn2);
+        press3 = (Button) findViewById(R.id.btn3);
+        press4 = (Button) findViewById(R.id.btn4);
+        press5 = (Button) findViewById(R.id.btn5);
+        btnPlus = (Button) findViewById(R.id.btnPlus);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        display=(TextView) findViewById(R.id.tvDisplay);
-        press=(Button)findViewById(R.id.btnPress);
-        press.setOnClickListener(new View.OnClickListener() {
+
+        initialViews();
+        press1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                display.setText("1");
-                Toast.makeText(MainActivity.this,"Press Done",Toast.LENGTH_SHORT).show();
+                setDigit("1");
+
             }
         });
 
 
-        display2=(TextView) findViewById(R.id.tvDisplay2);
-        press2=(Button) findViewById(R.id.btnPress2);
         press2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                display2.setText("2");
-                Toast.makeText(MainActivity.this,"Press Done",Toast.LENGTH_SHORT).show();
+                setDigit("2");
+
             }
         });
 
-        display3=(TextView) findViewById(R.id.tvDisplay3);
-        press3=(Button) findViewById(R.id.btnPress3);
+
         press3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                display3.setText("3");
-                Toast.makeText(MainActivity.this,"Press Done",Toast.LENGTH_SHORT).show();
+                setDigit("3");
+
             }
         });
 
 
-        display4=(TextView) findViewById(R.id.tvDisplay4);
-        press4=(Button) findViewById(R.id.btnPress4);
         press4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                display4.setText("4");
-                Toast.makeText(MainActivity.this,"Press Done",Toast.LENGTH_SHORT).show();
+                setDigit("4");
+
             }
         });
 
 
-        display5=(TextView) findViewById(R.id.tvDisplay5);
-        press5=(Button) findViewById(R.id.btnPress5);
         press5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                display5.setText("5");
-                Toast.makeText(MainActivity.this,"Press Done",Toast.LENGTH_SHORT).show();
+                setDigit("5");
+
             }
         });
+
+        btnPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setDigit("+");
+
+            }
+        });
+
+    }
+
+    void setDigit(String digit) {
+        if (digit.equals("+")) {
+            String tem = display2.getText().toString();
+            int a = Integer.parseInt(tem);
+            display.setText(String.valueOf(a) + "+");
+            display2.setText("");
+
+        } else {
+            String tem = display2.getText() + digit;
+            display2.setText(tem);
+        }
 
     }
 }

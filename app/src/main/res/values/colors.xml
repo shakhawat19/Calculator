@@ -9,5 +9,6 @@
     <color name="btnDigit">#555555</color>
     <color name="btnOp">#FF9300</color>
     <color name="colorBG">#000000</color>
+    <color name="white">#FFF</color>
 
 </resources>
